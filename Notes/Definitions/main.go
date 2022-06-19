@@ -82,6 +82,16 @@ func main() {
 				},
 			},
 			{
+				"projection",
+				"Projection",
+				nil,
+			},
+			{
+				"product topology",
+				"ProductTopology",
+				nil,
+			},
+			{
 				"ray",
 				"Ray",
 				&Definitions{
