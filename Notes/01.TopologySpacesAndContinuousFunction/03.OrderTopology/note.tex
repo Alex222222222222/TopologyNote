@@ -1,0 +1,45 @@
+\section{The Order Topology}
+
+\begin{definition}[interval]\label{def:Interval}
+      Let \textmathbb{X} is a set having a simple order relation $ < $. Given elements $ a $ and $ b $ of \textmathbb{X} such that $ a < b $, there are four subsets of \textmathbb{X} that are called \defineNewWorld{intervals} determined by $ a $ and $ b $:
+      \begin{itemize}
+            \item $ (a,b) = \{ x | a < x < b \} $
+            \item $ (a,b] = \{ x | a < x \le b \} $
+            \item $ [a,b) = \{ x | a \le x < b \} $
+            \item $ [a,b] = \{ x | a \le x \le b \} $
+      \end{itemize}
+
+      $ (a,b) $ is called an \defineNewWorld{open interval} on \textmathbb{X}.
+      $ [a,b] $ is called an \defineNewWorld{closed interval} on \textmathbb{X}.
+      $ (a,b] $ and $ [a,b) $ is called \defineNewWorld{half-open intervals}.
+\end{definition}
+
+\begin{definition}[order topology]\label{def:OrderTopology}\footnote{
+      The standard topology on \textmathbb{R} is an order topology derived from the usual order on \textmathbb{R}.
+}
+      Let \textmathbb{X} be a set with a simple order relation; assume \textmathbb{X} has more than one element. Let \textmathbb{B} be the collection of all sets of the following types:
+      \begin{itemize}
+            \item All open intervals $ (a,b) $ in \textmathbb{X}.
+            \item All intervals of the form $ [a_{0},b) $, where $ a_0 $ is the smallest element(if exist) of \textmathbb{X}.
+            \item All intervals of the form $ (a,b_{0}] $, where $ b_0 $ is the largest element(if exist) of \textmathbb{X}.
+      \end{itemize}
+
+      The collection \textmathbb{B} formed a basis for a topology on \textmathbb{X}, which is called the order topology.
+\end{definition}
+
+\begin{definition}[ray]\label{def:Ray}\footnote{
+      open rays are always open sets in the order topology
+}\footnote{
+      the open rays also formed a subbasis of the order topology
+}
+      If \textmathbb{X} is an ordered set, and $ a $ is an element of \textmathbb{X}, there are four subsets of \textmathbb{X} that are called \defineNewWorld{rays} determined by $ a $:
+      \begin{itemize}
+            \item $ (a,+\infty) = \{ x | x > a \} $
+            \item $ (-\infty,a) = \{ x | x < a \} $
+            \item $ [a,+\infty) = \{ x | x \ge a \} $
+            \item $ (-\infty,a] = \{ x | x \le a \} $
+      \end{itemize}
+
+      $ (a,+\infty) $ and $ (-\infty,a) $ are called \defineNewWorld{open rays}.
+      $ [a,+\infty) $ and $ (-\infty,a] $ are called \defineNewWorld{closed rays}.
+\end{definition}
