@@ -1,12 +1,19 @@
-\documentclass[twoside]{article}
+\documentclass[twoside]{book}
 
-\usepackage[a4paper, marginparwidth=75pt]{geometry}
+\usepackage[a4paper]{geometry}
 
 \usepackage{amssymb}
 \usepackage{amsmath}
 \usepackage{amsthm}
 
-\usepackage{marginnote}
+\usepackage{multicol}
+
+% for cross reference
+% \usepackage{hyperref}
+
+% for fixed length of cell of tables
+% \usepackage{tabularx}
+% \usepackage{longtable}
 
 \newtheorem{definition}{Definition}[section]
 \newtheorem{lemma}{Lemma}[section]
@@ -27,10 +34,16 @@
 
       \newpage
 
-      \input{01.BasicDefinition/note.tex}
+      \input{Definitions/definitions.tex}
 
-      \input{02.Basis/note.tex}
+      \newpage
 
-      \input{02.Basis/exercise.tex}
+      \chapter{Topology Spaces and Continuous Function}
+
+      \input{01.TopologySpacesAndContinuousFunction/01.BasicDefinition/note.tex}
+
+      \input{01.TopologySpacesAndContinuousFunction/02.Basis/note.tex}
+
+      \input{01.TopologySpacesAndContinuousFunction/02.Basis/exercise.tex}
 
 \end{document}
