@@ -82,6 +82,54 @@ func main() {
 				},
 			},
 			{
+				"ray",
+				"Ray",
+				&Definitions{
+					SubOrder: 1,
+					Def: []*Definition{
+						{
+							"open ray",
+							"Ray",
+							nil,
+						},
+						{
+							"closed ray",
+							"Ray",
+							nil,
+						},
+					},
+				},
+			},
+			{
+				"order topology",
+				"OrderTopology",
+				nil,
+			},
+			{
+				"interval",
+				"Interval",
+				&Definitions{
+					SubOrder: 1,
+					Def: []*Definition{
+						{
+							"open interval",
+							"Interval",
+							nil,
+						},
+						{
+							"closed interval",
+							"Interval",
+							nil,
+						},
+						{
+							"half-open interval",
+							"Interval",
+							nil,
+						},
+					},
+				},
+			},
+			{
 				"topology space",
 				"TopologySpace",
 				nil,
