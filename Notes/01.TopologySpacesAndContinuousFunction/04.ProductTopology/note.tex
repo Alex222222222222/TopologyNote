@@ -1,0 +1,35 @@
+\section{The Product Topology}
+
+\begin{definition}[product topology]\label{def:ProductTopology}
+      Let \textmathbb{X} and \textmathbb{Y} be topological spaces. The \defineNewWorld{product topology} on $ \mathbb{X} \times \mathbb{Y} $ having a basis \textmathbb{B} containing all sets of the form $ U \times V $, where $ U $ and $ V $ is open sets of \textmathbb{X} and \tmb{Y} respectively.
+\end{definition}
+
+\begin{theorem}\omitObviuos
+      If \tmb{B} and \tmb{C} is basis for the topology of \tmb{X} and \tmb{Y} respectively, then the collection
+      \begin{equation*}
+            \mathbb{D} = \{ B \times C | B \in \mathbb{B} and C \in \mathbb{C} \}
+      \end{equation*}
+      is a basis for the topology of $ \mathbb{X} \times \mathbb{Y} $
+\end{theorem}
+
+\begin{definition}[projection]\label{def:Projection}
+      Let $ \pi_{1}: \mathbb{X} \times \mathbb{Y} \rightarrow \mathbb{X} $ be defined by the equation:
+      \begin{equation*}
+            \pi_{1}(x,y) = x
+      \end{equation*} 
+
+      Let $ \pi_{2}: \mathbb{X} \times \mathbb{Y} \rightarrow \mathbb{Y} $ be defined by the equation:
+      \begin{equation*}
+            \pi_{1}(x,y) = y
+      \end{equation*} 
+
+      The maps $ \pi_{1} $ and $ \pi_{2} $ are called the \defineNewWorld{projections} of $ \mathbb{X} \times \mathbb{Y} $ onto its first and second factors, respectively.
+\end{definition}
+
+\begin{theorem}\omitObviuos
+      The collection
+      \begin{equation*}
+            \mathbb{S} = \{ \pi_{1}^{-1}(U) | U open in \mathbb{X} \} \cup \{ \pi_{2}^{-1}(V) | V open in \mathbb{Y} \}
+      \end{equation*}
+      is a subbasis for the product topology on $ \mathbb{X} \times \mathbb{Y} $.
+\end{theorem}
