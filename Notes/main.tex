@@ -1,0 +1,36 @@
+\documentclass[twoside]{article}
+
+\usepackage[a4paper, marginparwidth=75pt]{geometry}
+
+\usepackage{amssymb}
+\usepackage{amsmath}
+\usepackage{amsthm}
+
+\usepackage{marginnote}
+
+\newtheorem{definition}{Definition}[section]
+\newtheorem{lemma}{Lemma}[section]
+
+\title{Topology Note}
+\author{Alex}
+
+\newcommand{\textmathbb}[1]{$ \mathbb{#1} $}
+\newcommand{\defineNewWorld}[1]{\textit{\textbf{#1}}}
+\newcommand{\omitObviuos}{\footnote{We omit the proof of this lemma as it is obvious.}}
+
+\begin{document}
+      \maketitle
+
+      \newpage
+
+      \tableofcontents
+
+      \newpage
+
+      \input{01.BasicDefinition/note.tex}
+
+      \input{02.Basis/note.tex}
+
+      \input{02.Basis/exercise.tex}
+
+\end{document}
