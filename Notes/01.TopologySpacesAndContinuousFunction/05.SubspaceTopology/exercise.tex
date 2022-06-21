@@ -1,0 +1,90 @@
+\subsubsection{Exercise}
+
+\begin{enumerate}
+      \item A map $ \mathit{f} : \mathbb{X} \rightarrow \mathbb{Y} $ is said to be a \defineNewWorld{open map}\label{def:OpenMap} if for every open set $ U \subseteq \mathbb{X} $, the set $ \mathit{f}(U) $ is open in \mtb{Y}. Show that $ \pi : \mathbb{X} \times \mathbb{Y} \rightarrow \mathbb{X} $ is open map.
+      
+      \begin{proof}
+            An open set in \productSet{\mathbb{X}}{\mathbb{Y}} can be represented by 
+            \begin{equation*}
+                  \cup( U_{i} \times U_{i}' )
+            \end{equation*}
+            where $ U_{i}, U_{i}' $ are open sets in \mtb{X}, \mtb{Y}, respectively.
+
+            Also,
+            \begin{equation*}
+                  \cup( U_{i} \times U_{i}' ) = \cup( U_{i} ) \times \cup( U_{i}' )
+            \end{equation*}
+
+            Thus,
+            \begin{equation*}
+                  \pi(\cup( U_{i} \times U_{i}' )) = \cup( U_{i} )
+            \end{equation*}
+
+            Thus, $ \pi(U) $ is open in \mtb{X}.
+      \end{proof}
+
+      \item Let \mtb{X} and \mtb{X'} denote a single set in the topologies \mtb{T} and \mtb{T'}, respectively; let \mtb{Y} and \mtb{Y'} denote a single set in the topologies \mtb{U} and \mtb{U'}, respectively. \footnote{
+            what does \mtb{X}, \mtb{X'}, \mtb{Y}, \mtb{Y'} really mean here?? I do not know, so I just put the exercise here without a proof.
+      } Assume these sets are nonempty.
+      \begin{enumerate}
+            \item Show that if \mt{ \mathbb{T}' \supseteq \mathbb{T} } and \mt{ \mathbb{U}' \supseteq \mathbb{U} }, then the product topologies \productSet{\mathbb{X'}}{\mathbb{Y'}} is finer than the product topology on \productSet{\mathbb{X}}{\mathbb{Y}}.
+            \item Does the converse of the previous statement hold?
+      \end{enumerate}
+
+      \item Show that the countable collection\footnote{
+            The prove of this set is countable is typically similar to Cantor's enumeration of a countable collection of countable sets.
+      }
+      \begin{equation*}
+            \{ 
+                  (a,b) \times (c,d) | a < b, c < d, a \in \mathbb{Q}, b \in \mathbb{Q}, c \in \mathbb{Q}, d \in \mathbb{Q}
+            \}
+      \end{equation*}
+      is a basis for \mt{\mathbb{R}^{2}}
+
+      \begin{proof}
+            This is obvious if you prove that $ (a,b) \times (c,d) $ is a rectangle in the \mt{\mathbb{R}^{2}} plane.
+      \end{proof}
+
+      \item Let \mtb{X} be an ordered set. If \mtb{Y} is a proper subset of \mtb{X} that is convex in \mtb{X} prove that \mtb{Y} may not be an interval or a ray in \mtb{X}.
+      
+      \begin{proof}
+            Let \mt{\mathbb{X} = \mathbb{R}^{2}} with dictionary order. Then \mt{
+                  Y = \{
+                        (x,y) | -1 \le x \le 1 
+                  \} 
+            } is convex in \mtb{X}, however it is not an interval or a ray.
+      \end{proof}
+
+      There is a false prove given by myself.
+
+      \begin{proof}
+            Let \mtb{S} be a set that contain all intervals and rays of \mtb{Y}. We define a partial order on \mtb{S} by inclusion. So if there is a chain in \mtb{S}:
+            \begin{equation*}
+                  S_{1} \subseteq S_{2} \subseteq S_{3} \dots
+            \end{equation*}
+
+            Let 
+            \begin{equation*}
+                  S = S_{1} \cup S_{2} \cup S_{3} \cup \dots
+            \end{equation*}
+
+            Thus, \mt{S} is an upper bound of the chain.
+
+            Thus, by Zorn's Lemma, there is a maximal element of \mtb{S}, say \mt{U}, then we prove that \mt{ U = \mathbb{Y} }.
+
+            If \mt{ U \neq \mathbb{Y} }, then \mt{
+                  \exists x, x \in \mathbb{Y} - U
+            }. 
+
+            If \mt{U} is a ray say \mt{ (a,+\infty) }. Then \mt{ x < a }, thus \mt{
+                  U \subseteq (x,+\infty) \subseteq \mathbb{B}
+            }, then there is contradiction with the maximal element.
+
+            If \mt{U} is an interval, the circumstance is similar with the proof of \mt{U} is a ray.
+
+            Thus \mtb{Y} is a ray or an interval.
+      \end{proof}
+
+      However, there is issue with this proof, the set \mt{S} does exists. However, it may not be an interval or ray, so it may not be contained in \mtb{S}
+      
+\end{enumerate}
