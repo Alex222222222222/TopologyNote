@@ -4,6 +4,7 @@ import (
 	"fmt"
 	"log"
 	"os"
+	"sort"
 	"strings"
 )
 
@@ -25,7 +26,7 @@ type Definitions struct {
 func (definitions *Definitions) sort() {
 	for i := 0; i < len(definitions.Def)-1; i += 1 {
 		for j := len(definitions.Def) - 1; j > i; j -= 1 {
-			if definitions.Def[j].Name < definitions.Def[j-1].Name {
+			if strings.ToLower(definitions.Def[j].Name) < strings.ToLower(definitions.Def[j-1].Name) {
 				definitions.Def[j], definitions.Def[j-1] = definitions.Def[j-1], definitions.Def[j]
 			}
 		}
@@ -286,7 +287,13 @@ func main() {
 
 	file.Write([]byte("\\begin{multicols}{2}\n\n"))
 
+	keys := make([]string, 0, len(alphabet))
 	for k := range alphabet {
+		keys = append(keys, k)
+	}
+	sort.Strings(keys)
+
+	for _, k := range keys {
 		alphabet[k].sort()
 
 		file.Write([]byte(
