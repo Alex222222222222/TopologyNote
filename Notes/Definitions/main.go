@@ -82,6 +82,26 @@ func main() {
 				},
 			},
 			{
+				"convex",
+				"Convex",
+				nil,
+			},
+			{
+				"ordered square",
+				"OrderedSquare",
+				nil,
+			},
+			{
+				"subspace topology",
+				"SubspaceTopology",
+				nil,
+			},
+			{
+				"subspace",
+				"SubspaceTopology",
+				nil,
+			},
+			{
 				"projection",
 				"Projection",
 				nil,
