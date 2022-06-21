@@ -1,0 +1,84 @@
+\section{The Subspace Topology}
+
+\begin{definition}[subspace topology]\label{def:SubspaceTopology}
+      Let \tmb{X} be a topological space with topology \tmb{T}. If \mt{Y} is a subset of \tmb{X}, the collection
+      $ \mathbb{T}_{Y} = \{ Y \cap U | U \in \mathbb{T} \} $
+      is a topology on \mt{Y}, called the \defineNewWorld{subspace topology}.
+
+      \mt{Y} is also called a \defineNewWorld{subspace} of \tmb{X}
+\end{definition}
+
+\begin{lemma}\omitObviuos
+      If \tmb{B} is basis for the topology of \tmb{X}, \mt{Y} is a subset of \tmb{X} then the collection
+      \begin{equation*}
+            \mathbb{B}_{Y} = \{ B \cap Y | B \in \mathbb{B} \} 
+      \end{equation*}
+      is a basis for the subspace topology on \mt{Y}
+\end{lemma}
+
+\begin{lemma}\omitObviuos
+      Let \mt{Y} be a subspace of \tmb{X}. If \mt{U} is open in \mt{Y} and \mt{Y} is open in \tmb{X}, then \mt{U} is open in \mtb{X}.
+\end{lemma}
+
+\begin{theorem}\footnote{
+      If \mtb{X} is an ordered set in the order topology, and \mtb{Y} is a subset of \mtb{X}. The order relation, when restricted to \mtb{Y}, makes \mtb{Y} into and ordered set. However, \textit{
+            the resulting order topology on \mtb{Y} need not be the same as the topology that \mtb{Y} inherits as a subspace of \mtb{X}.
+      }
+}
+      If \mt{A} is a subspace of \mtb{X} and \mt{B} is a subspace of \mtb{Y}, then the product topology on \productSet{A}{B} is the same as the topology \productSet{A}{B} inherits as a subspace of \productSet{\mathbb{X}}{\mathbb{Y}}
+\end{theorem}
+
+\begin{proof}
+      Let $ \mathbb{B}_{\mathbb{X}} $ and $ \mathbb{B}_{\mathbb{Y}} $ and $ \mathbb{B}_{\mathbb{XY}} $ be basis of topology of \tmb{X} and \tmb{Y} and \productSet{\mathbb{X}}{\mathbb{Y}} respectively. Let $ \mathbb{B}_{\mathbb{X}}' $ and $ \mathbb{B}_{\mathbb{Y}}' $ and $ \mathbb{B}_{\mathbb{XY}}' $ be basis of topology of \mt{A} and \mt{A} and \productSet{A}{B} respectively. We will show that $ \mathbb{B}_{\mathbb{X}}' \times \mathbb{B}_{\mathbb{Y}}' = \mathbb{B}_{\mathbb{XY}}' $. Thus,  the product topology on \productSet{A}{B} is the same as the topology \productSet{A}{B} inherits as a subspace of \productSet{\mathbb{X}}{\mathbb{Y}}.
+
+      First, every element in $ \mathbb{B}_{\mathbb{X}}' \times \mathbb{B}_{\mathbb{Y}}' $ can be represented by $ B_{A} \cap A \times B_{B} \cap B = B_{A} \times B_{B} \cap A \times B \in \mathbb{B}_{\mathbb{XY}}' $ where $ B_{A} \in \mathbb{B}_{\mathbb{X}}', B_{B} \in \mathbb{B}_{\mathbb{Y}}' $. Thus $ \mathbb{B}_{\mathbb{X}}' \times \mathbb{B}_{\mathbb{Y}}' \subseteq \mathbb{B}_{\mathbb{XY}}' $.
+
+      Next, we show that $ \mathbb{B}_{\mathbb{X}}' \times \mathbb{B}_{\mathbb{Y}}' $ generate the topology \productSet{A}{B} inherits as a subspace of \productSet{\mathbb{X}}{\mathbb{Y}}. For any open set \mt{U} in \productSet{\mathbb{X}}{\mathbb{Y}}, and $ \forall x \in U \cap A \times B, \exists B_{\mathbb{X}} \times B_{\mathbb{Y}} \in \mathbb{B}_{\mathbb{XY}}, x \in B_{\mathbb{X}} \times B_{\mathbb{Y}} \subseteq \mathbb{X} \times \mathbb{Y} $.
+      Thus $ x \in B_{\mathbb{X}} \times B_{\mathbb{Y}} \cap A \times B \subseteq A \times B, B_{\mathbb{X}} \times B_{\mathbb{Y}} \cap A \times B \in \mathbb{B}_{\mathbb{X}}' \times \mathbb{B}_{\mathbb{Y}}' $.
+      Thus $ \mathbb{B}_{\mathbb{X}}' \times \mathbb{B}_{\mathbb{Y}}' $ generate the topology \productSet{A}{B} inherits as a subspace of \productSet{\mathbb{X}}{\mathbb{Y}}.
+\end{proof}
+
+\begin{definition}[ordered square]\label{def:OrderedSquare}
+      Let $ I = [0,1] $. The set \productSet{I}{I} in the dictionary order \footnote{
+            the dictionary means for $ X_{1}, X_{2} \in \mathbb{Y} = \mathbb{X}_{1} \times \mathbb{X}_{2} \times \mathbb{X}_{3} \dots $ which:
+            \begin{eqnarray*}
+                  X_{1} &=& (x_{1},x_{2},x_{3}\dots)\\
+                  X_{2} &=& (x_{1}',x_{2}',x_{3}'\dots)
+            \end{eqnarray*}
+            $ X_1 > X_2 $ only when
+            \begin{eqnarray*}
+                  && \exists k \in \mathbb{Z}_{+}, \forall i \in \mathbb{Z}_{+}, 0 < i < k \\
+                  && x_{i} = x_{i}'\\
+                  && x_{k} > x_{k}'
+            \end{eqnarray*}
+      } topology will be called \defineNewWorld{ordered square}, and denoted by $ I_{o}^{2} $
+\end{definition}
+
+\begin{definition}[convex]\label{def:Convex}
+      Given an ordered set \mtb{X}, let us say that a subset \mtb{Y} of \mtb{X} is \defineNewWorld{convex} in \mtb{X} if for each pair of points $ a < b $ of \mtb{Y}, the entire interval $ (a,b) $ of points of \mtb{X} lies in \mtb{Y}
+\end{definition}
+
+\begin{theorem}\footnote{
+      Given \mtb{X} is an ordered set in the order topology and \mtb{Y} is a subset of \mtb{X}, we shall assume that \mtb{Y} \textit{
+            is given the subspace topology
+      } unless we specifically state otherwise.
+}
+      Let \mtb{X} be an ordered set in the order topology. Let \mtb{Y} be a subset of \mtb{X} that is convex in \mtb{X}. Then the order topology on \mtb{Y} is the same as the topology \mtb{Y} inherits as a subspace of \mtb{X}.
+\end{theorem}
+
+\begin{proof}
+      Consider the ray $ (a,+\infty) $ in \mtb{X}. If $ a \in \mathbb{Y} $, then
+      \begin{equation*}
+            (a,+\infty) \cap \mathbb{Y} = \{
+                  x | x \in \mathbb{Y} and x > a      
+            \}
+      \end{equation*}
+
+      This is an open ray of the ordered set of \mtb{Y}. if $ a \notin Y $, then \mt{a} is either a lower bound on \mtb{Y} or an upper bound on \mtb{Y}, since \mtb{Y} is convex. In the former case, the set \mt{(a,+\infty) \cap \mathbb{Y}} equals all of \mtb{Y}, in the latter case, it is empty.
+
+      A similar remark shows that the intersection of the rat \mt{(-\infty,a)} with \tmb{Y} is either an open ray of \mtb{Y}, or \mtb{Y} itself, or empty. Since the sets \mt{(a,+\infty) \cal \mathbb{Y}} and \mt{
+            (-\infty,a) \cap \mathbb{Y}
+      } form a subbasis for the subspace topology on \mtb{Y}, and since each is open in the order topology, the order topology contains the subspace topology.
+
+      To prove the reverse, note that any open ray of \mtb{Y} equals the intersection of an open ray of \mtb{X} with \mtb{Y}, so it is open in the subspace topology on \mtb{Y}. Since the open rays of \mtb{Y} are a subbasis for the order topology on \mtb{Y}, this topology is contained in the subspace topology.
+\end{proof}
