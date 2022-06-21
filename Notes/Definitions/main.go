@@ -83,6 +83,11 @@ func main() {
 				},
 			},
 			{
+				"open map",
+				"OpenMap",
+				nil,
+			},
+			{
 				"convex",
 				"Convex",
 				nil,
