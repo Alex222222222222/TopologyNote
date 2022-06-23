@@ -26,8 +26,12 @@ type Definitions struct {
 func (definitions *Definitions) sort() {
 	for i := 0; i < len(definitions.Def)-1; i += 1 {
 		for j := len(definitions.Def) - 1; j > i; j -= 1 {
-			if strings.ToLower(definitions.Def[j].Name) < strings.ToLower(definitions.Def[j-1].Name) {
+			if strings.ToLower(definitions.Def[j].Ref) < strings.ToLower(definitions.Def[j-1].Ref) {
 				definitions.Def[j], definitions.Def[j-1] = definitions.Def[j-1], definitions.Def[j]
+			} else if strings.ToLower(definitions.Def[j].Ref) == strings.ToLower(definitions.Def[j-1].Ref) {
+				if strings.ToLower(definitions.Def[j].Name) < strings.ToLower(definitions.Def[j-1].Name) {
+					definitions.Def[j], definitions.Def[j-1] = definitions.Def[j-1], definitions.Def[j]
+				}
 			}
 		}
 	}
@@ -77,6 +81,75 @@ func main() {
 						{
 							"strictly coarser",
 							"Comparable",
+							nil,
+						},
+					},
+				},
+			},
+			{
+				"limit",
+				"Limit",
+				nil,
+			},
+			{
+				"\\mt{T_{1}} axiom",
+				"T1Axiom",
+				nil,
+			},
+			{
+				"Hausdorff space",
+				"HausdorffSpace",
+				nil,
+			},
+			{
+				"converge",
+				"Converge",
+				nil,
+			},
+			{
+				"limit point",
+				"LimitPoint",
+				nil,
+			},
+			{
+				"point of accumulation",
+				"LimitPoint",
+				nil,
+			},
+			{
+				"cluster point",
+				"LimitPoint",
+				nil,
+			},
+			{
+				"neighbourhood",
+				"Neighbourhood",
+				nil,
+			},
+			{
+				"intersect",
+				"Intersect",
+				nil,
+			},
+			{
+				"interior",
+				"Interior",
+				nil,
+			},
+			{
+				"closure",
+				"Closure",
+				nil,
+			},
+			{
+				"closed",
+				"Closed",
+				&Definitions{
+					SubOrder: 1,
+					Def: []*Definition{
+						{
+							"closed in",
+							"ClosedIn",
 							nil,
 						},
 					},
@@ -273,13 +346,13 @@ func main() {
 	alphabet := map[string]*Definitions{}
 
 	for i := 0; i < len(definitions.Def); i += 1 {
-		if _, ok := alphabet[strings.ToUpper(definitions.Def[i].Name[0:1])]; !ok {
-			alphabet[strings.ToUpper(definitions.Def[i].Name[0:1])] = &Definitions{
+		if _, ok := alphabet[strings.ToUpper(definitions.Def[i].Ref[0:1])]; !ok {
+			alphabet[strings.ToUpper(definitions.Def[i].Ref[0:1])] = &Definitions{
 				SubOrder: 0,
 				Def:      make([]*Definition, 0, 0),
 			}
 		}
-		alphabet[strings.ToUpper(definitions.Def[i].Name[0:1])].Def = append(alphabet[strings.ToUpper(definitions.Def[i].Name[0:1])].Def, definitions.Def[i])
+		alphabet[strings.ToUpper(definitions.Def[i].Ref[0:1])].Def = append(alphabet[strings.ToUpper(definitions.Def[i].Ref[0:1])].Def, definitions.Def[i])
 	}
 
 	file, err := os.Create("./definitions.tex")
