@@ -1,0 +1,238 @@
+\section{Closed Sets and Limit Points}
+
+\begin{definition}[closed]\label{def:Closed}\footnote{
+      A set can be open, or closed, or both, or neither
+}
+      A subset \mt{A} of a topological space is said to be closed if the set \mt{\mathbb{X}-A} is open.
+\end{definition}
+
+\begin{theorem}\omitObviuos
+      Let \mtb{X} be a topological space. Then the following conditions hold
+      \begin{enumerate}
+            \item \mt{\emptyset} and \mtb{X} are closed.
+            \item Arbitrary intersections of closed sets are closed
+            \item Finite unions of closed sets are closed 
+      \end{enumerate}
+\end{theorem}
+
+\begin{definition}[closed in]\label{def:ClosedIn}
+      Let \mtb{X} be a topological space; let \mtb{Y} be a subspace of \mtb{X}. We say that a set \mt{A} is \defineNewWorld{closed in} \mtb{Y} if \mt{A} is a subset of \mtb{Y} and \mt{A} is closed in the subspace topology of \mtb{Y}
+\end{definition}
+
+\begin{theorem}
+      Let \mtb{Y} be a subspace of \mtb{X}. Then a set \mt{A} is closed in \mtb{Y} if and only if it equals the intersection of a closed set of \mtb{X} with \mtb{Y}
+\end{theorem}
+
+\begin{proof}
+      First we proof that if \mt{A} is closed in \mtb{Y}, then \mt{\exists B \subseteq \mathbb{X}, B \cap \mathbb{Y} = A}. As the origin topology form a surjective map to its subspace topology, there exists a \mt{B} closed in \mtb{X} that \mt{
+            \mathbb{Y} - A = ( \mathbb{X} - B ) \cap \mathbb{Y}
+      }. Then \mt{B \cap \mathbb{Y} = A}
+
+      Conversely, if \mt{\exists B \subseteq \mathbb{X}, B \cap \mathbb{Y} = A}. Then, \mt{
+            \mathbb{Y} - A = ( \mathbb{X} - B ) \cap \mathbb{Y}
+      }. Then \mt{\mathbb{X}-B} is open in \mtb{Y}, \mt{\mathbb{Y}-A} is open in \mtb{Y}. Then \mt{A} is closed in \mtb{Y}
+\end{proof}
+
+\begin{theorem}\footnote{
+      As the proof is similar to the case in the open set, so we omit the proof here.
+}
+      Let \mtb{Y} be a subspace of \mtb{X}. If \mt{A} is closed in \mtb{Y} and \mtb{Y} is closed in \mtb{X}, then \mt{A} is closed in \mtb{X}.
+\end{theorem}
+
+\begin{definition}[interior]\label{def:Interior}
+      Given a subset \mt{A} of a topological space \mtb{X}, the \defineNewWorld{interior} of \mt{A} is defined as the union of all open sets contained in \mt{A}. Denoted by $ Int(A) $.
+\end{definition}
+
+\begin{definition}[closure]\label{def:Closure}
+      Given a subset \mt{A} of a topological space \mtb{X}, the \defineNewWorld{closure} of \mt{A} is defined as the intersection of all closed sets containing \mt{A}. Denoted by \mt{Cl(A)} or \mt{\overline{A}}
+\end{definition}
+
+\begin{theorem}\omitObviuos\footnote{
+      As the closure of \mt{A} in \mtb{X} and the closure \mt{A} in \mtb{Y} will sometimes be different. We always use \mt{\overline{A}} to denote the closure of \mt{A} in \mtb{X}
+}
+      Let \mtb{Y} be a subspace of a topological space \mtb{X}; let \mt{A} be a subset of \mtb{X}. Let \mt{\overline{A}} denote the closure of \mt{A} in \mtb{X}. Then the closure of \mt{A} in \mtb{Y} equals $ \closure{A} \cap \mathbb{Y} $
+\end{theorem}
+
+\begin{definition}[intersect]\label{def:intersect}
+      We say that a set \mt{A} \defineNewWorld{intersects} \mt{B} if \mt{ A \cap B } is not empty.
+\end{definition}
+
+\begin{theorem}
+      Let \mt{A} be a subset of the topological space \mtb{X}
+      \begin{enumerate}
+            \item The \mt{ x \in \closure{A} } if and only if every open set \mt{U} containing \mt{x} intersect \mt{A}.
+            \item Supposing the topology of \mtb{X} is given by a basis, then \mt{ x \in \closure{A} } \ioi every basis element \mt{B} containing \mt{x} intersects \mt{A}
+      \end{enumerate}
+\end{theorem}
+
+\begin{proof}
+      There are only two types of closed set \mt{U} in \tmb{X}:
+      \begin{enumerate}
+            \item \mt{ U \supseteq \closure{A} }
+            \item \mt{ U \cap A \neq A }
+      \end{enumerate}
+
+      Thus, there are only two types of open set \mt{U} in \mtb{X} respectively.
+      \begin{enumerate}
+            \item \mt{U} does not intersects \mt{A}.
+            \item \mt{ U \cap \closure{A} \neq \emptyset } 
+      \end{enumerate}
+
+      \begin{enumerate}
+            \item If \mt{ x \in \closure{A} }, then every open set containing \mt{x} is the open set of second type, thus every open set containing \mt{x} intersects \mt{A}
+            
+            If every open set containing \mt{x} intersect \mtb{A}, suppose \mt{ x \notin \closure{A} }. Then \mt{\mathbb{X} - \closure{A}} is a open set containing x, however, it does not intersects \mt{A}. Thus, \mt{ x \in \closure{A} }.
+
+            \item If \mt{ x \in \closure{A} }, as every basis element of \tmb{X} is a open set, thus every basis element containing \mt{x} intersects \mtb{A}
+            
+            If every open set containing \mt{x} intersect \mtb{A}, suppose \mt{ x \notin \closure{A} }.
+
+            As every open sets can be represented by union of basis. Let 
+            \begin{equation*}
+                  \mathbb{X} - \closure{A} = B_{1} \cup B_{2} \cup B_{3} \cup \dots \cup B_{1}' \cup B_{2}' \cup B_{3}' \cup \dots 
+            \end{equation*}
+            where \mt{B} are bases containing \mt{x}, and \mt{B'} are bases that does not contain \mt{x}.
+
+            Thus, 
+            \begin{equation*}
+                  x \in B_{1} \cup B_{2} \cup B_{3} \cup \dots \subseteq \mathbb{X} - \closure{A}
+            \end{equation*}
+
+            Then \mt{B_{1} \cup B_{2} \cup B_{3} \cup \dots} that is a open set can be generated by all the bases containing \mt{x}, however, that does not intersects \mt{A}. So, \mt{ x \in \closure{A} }.
+      \end{enumerate}
+\end{proof}
+
+\begin{definition}[neighbourhood]\label{def:Neighbourhood}\footnote{
+      Some other mathematicians use neighbourhood to say that \mt{U} merely contains an open set containing \mt{x}. The book does not give a formal definition for the word merely, and I am not sure either.
+}
+      If we say \mt{U} is a neighbourhood of \mt{x} in \mtb{X}, then \mt{U} is an open set in \mtb{X} containing \mt{x}
+\end{definition}
+
+\begin{definition}[limit point, point of accumulation, cluster point]\label{def:LimitPoint}\footnote{
+      Note that, \mt{x} may belong to \mt{A} or not, this does not matter.
+}
+      If \mt{A} is a subset of topological space \mtb{X}.We say that \mt{x} is a limit point of \mt{A} \ioi every open sets containing \mt{x} intersects A with some points other than \mt{x}.
+
+      This condition is also equivalent to the condition that if \mt{x} is a limit point of \mt{A} \ioi \mt{
+            x \in \closure{A-\{x\}}
+      }
+\end{definition}
+
+\begin{theorem}\omitObviuos
+      Let \mt{A} be a subset of topological space \mtb{X}; let \mt{A'} be the set of all limit points of \mt{A}. Then
+      \begin{equation*}
+            \closure{A} = A \cup A'
+      \end{equation*}
+\end{theorem}
+
+\begin{corollary}\omitObviuos
+      A subset of a topological space is closed if and only if it contains all its limit point.
+\end{corollary}
+
+\begin{definition}[converge]\label{def:Converge}\footnote{
+      In real line, a sequence can not converge to multiple points, but for an arbitrary topological space, this is possible.
+}
+      We say that a sequence of \mt{
+            x_{1}, x_{2}, x_{3} \dots
+      } \defineNewWorld{converge} to \mt{x}. When for every neighbourhood \mt{U} of \mt{x}, there exists a positive integer \mt{N}, such that for all \mt{n > N}, \mt{x_{n} \in U}.
+\end{definition}
+
+\begin{definition}[Hausdorff space]\label{def:HausdorffSpace}
+      A topological space is called a \defineNewWorld{Hausdorff space}, if for every distinct \mt{x_{1}}, \mt{x_{2}} in \mtb{X}, there exists disjoint neighbourhood of \mt{U_{1}}, \mt{U_{2}} of \mt{x_{1}}, \mt{x_{2}} in \mtb{X}.
+\end{definition}
+
+\begin{theorem}\footnote{
+      This implies that a sequence in a Hausdorff space cannot converge to multiple points. The following theorem prove this.
+}\footnote{
+      The condition every finite point set is closed is weaker than the Hausdorff space condition. For instance, the finite complement topology of \mtb{R} met the condition of finite point set. However it is not a Hausdorff space.
+}
+      Every finite point set in a Hausdorff space \mtb{X} is closed.
+\end{theorem}
+
+\begin{proof}
+      Let \mt{A} be a finite point set in a Hausdorff space \mtb{X}.
+
+      Suppose \mt{A} only have one element. Then for every \mt{x\in\mathbb{X}-A}, there exists a neighbourhood of \mt{x} that does not intersect with \mt{A}. So \mt{A} is closed.
+
+      Suppose \mt{A} is a closed finite point set. We take \mt{x_{0}\in\mathbb{X}-A}. As finite union of closed set is closed, \mt{A\cup\{x_{0}\}} is closed.
+
+      Then, from induction, all finite point set in a Hausdorff space is closed.
+\end{proof}
+
+\begin{theorem}
+      If \mtb{X} is a Hausdorff space, then a sequence of points in \mtb{X} converges to at most one point.
+\end{theorem}
+
+\begin{proof}
+      Suppose that the following sequence
+      \begin{equation*}
+            x_{1}, x_{2}, x_{3}\dots
+      \end{equation*}
+
+      Converge to more than one points say 
+      \begin{equation*}
+            y_{1}, y_{2}, y_{3}\dots
+      \end{equation*}
+
+      Then there exists 
+      \begin{equation*}
+            n_{1}, n_{2}, n_{3}\dots, U_{1}, U_{2}, U_{3}\dots
+      \end{equation*}
+
+      Such that for \mt{n > n_{i}}
+      \begin{equation*}
+            x_{n} \in U_{i}, y_{i} \in U_{i}
+      \end{equation*}
+
+      If we take disjoint \mt{U_{1}, U_{2}} which is possible as this is a Hausdorff space.
+
+      Then the previews condition does not stand. So, every sequence of points in a Hausdorff space can only converge to at most one point.
+\end{proof}
+
+\begin{definition}[limit]\label{def:Limit}
+      If a sequence \mt{x_{n}} of points in Hausdorff space converge to the point \mt{x}, we denote this by \mt{x_{n} \rightarrow x} and we say the \defineNewWorld{limit} of \mt{x_{n}} is \mt{x}.
+\end{definition}
+
+\begin{definition}[\mt{T_{1}} axiom]\label{def:T1Axiom}
+      The condition that all finite point set of a topological space is closed is called \defineNewWorld{ \mt{T_{1}} axiom}.
+\end{definition}
+
+\begin{theorem}
+      Let \mtb{X} be a space satisfying the \mt{T_{1}} axiom; let \mt{A} be a subset of \mtb{X}. Then the point \mt{x} is a limit point of \mt{A} if and only if every neighbourhood of \mt{x} contains infinitely many points of \mt{A}.
+\end{theorem}
+
+\begin{proof}
+      If every neighbourhood of \mt{x} contains infinitely many point of \mt{A}. Than every neighbourhood of \mt{x} intersect with \mt{A} with infinite element other than \mt{x}, then \mt{x} is a limit point of \mt{A}.
+
+      If \mt{x} is a limit point of \mt{A}. Suppose that there exists a open set \mt{U} containing \mt{x} and intersect with \mt{A} for finite many points.
+      Let
+      \begin{equation*}
+            U' = U \cap ( A - x )
+      \end{equation*}
+
+      Then, \mt{x \notin U'}.
+      Let 
+      \begin{equation*}
+            U'' = U - U'
+      \end{equation*}
+
+      Then \mt{U''} is open as \mt{U'} is a finite point set and
+      \begin{equation*}
+            U'' = U - U' = U \cap (\mathbb{X} - U')
+      \end{equation*}
+      
+      Also, \mt{x \in U''}.
+      Thus, \mt{U''} is a open set containing \mt{x} that only intersect \mt{A} with \mt{x} or do not intersect \mt{A}. This is a contradiction of x is a limit point. Thus there does not exists a open set \mt{U} containing \mt{x} and intersect with \mt{A} for finite many points.
+\end{proof}
+
+\begin{theorem}\omitObviuos
+      Every simply ordered set is a Hausdorff space in order topology.
+\end{theorem}
+
+\begin{theorem}\omitObviuos
+      The product of two Hausdorff space is a Hausdorff space.
+\end{theorem}
+
+\begin{theorem}\omitObviuos
+      A subspace of a Hausdorff space is a Hausdorff space.
+\end{theorem}

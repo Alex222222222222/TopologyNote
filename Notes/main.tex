@@ -18,21 +18,39 @@
 \newtheorem{definition}{Definition}[section]
 \newtheorem{lemma}{Lemma}[section]
 \newtheorem{theorem}{Theorem}[section]
+\newtheorem{corollary}{Corollary}[section]
+\newtheorem{proposition}{Proposition}[section]
 
 \title{Topology Note}
 \author{Alex}
 
-\newcommand{\textmathbb}[1]{$ \mathbb{#1} $}
+\newcommand{\textmathbb}[1]{ $ \mathbb{#1} $ }
 \newcommand{\defineNewWorld}[1]{\textit{\textbf{#1}}}
 \newcommand{\omitObviuos}{\footnote{We omit the proof of this lemma as it is obvious.}}
-\newcommand{\mt}[1]{$ #1 $}
+\newcommand{\mt}[1]{ $ #1 $ }
 \newcommand{\tmb}[1]{\textmathbb{#1}}
 \newcommand{\mtb}[1]{\textmathbb{#1}}
-\newcommand{\productSet}[2]{$ #1 \times #2 $}
+\newcommand{\productSet}[2]{ $ #1 \times #2 $ }
+\newcommand{\closure}[1]{\overline{#1}}
+\newcommand{\mclosure}[1]{ $ \overline{#1} $ }
 
 % commonly used definitions
 \newcommand{\topology}{topology}
 \newcommand{\basis}{basis}
+\newcommand{\topological}{topological}
+\newcommand{\closed}{closed}
+\newcommand{\hausdorff}{Hausdorff}
+\newcommand{\Hausdorff}{Hausdorff}
+\newcommand{\intersection}{intersection}
+\newcommand{\union}{union}
+\newcommand{\arbitrary}{arbitrary}
+\newcommand{\interior}{interior}
+\newcommand{\intersect}{intersect}
+\newcommand{\ioi}{ if and only if }
+\newcommand{\element}{element}
+\newcommand{\neighbourhood}{neighbourhood}
+\newcommand{\converge}{converge}
+\newcommand{\induction}{induction}
 
 \begin{document}
       \maketitle
@@ -52,19 +70,18 @@
       \input{01.TopologySpacesAndContinuousFunction/01.BasicDefinition/note.tex}
 
       \input{01.TopologySpacesAndContinuousFunction/02.Basis/note.tex}
-
       \input{01.TopologySpacesAndContinuousFunction/02.Basis/exercise.tex}
 
       \input{01.TopologySpacesAndContinuousFunction/03.OrderTopology/note.tex}
-
       \input{01.TopologySpacesAndContinuousFunction/03.OrderTopology/exercise.tex}
 
       \input{01.TopologySpacesAndContinuousFunction/04.ProductTopology/note.tex}
-
       \input{01.TopologySpacesAndContinuousFunction/04.ProductTopology/exercise.tex}
 
       \input{01.TopologySpacesAndContinuousFunction/05.SubspaceTopology/note.tex}
-
       \input{01.TopologySpacesAndContinuousFunction/05.SubspaceTopology/exercise.tex}
+
+      \input{01.TopologySpacesAndContinuousFunction/06.ClosedSetsAndLimitPoints/note.tex}
+      \input{01.TopologySpacesAndContinuousFunction/06.ClosedSetsAndLimitPoints/exercise.tex}
 
 \end{document}
