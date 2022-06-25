@@ -87,6 +87,16 @@ func main() {
 				},
 			},
 			{
+				"boundary",
+				"Boundary",
+				nil,
+			},
+			{
+				"diagonal",
+				"Diagonal",
+				nil,
+			},
+			{
 				"limit",
 				"Limit",
 				nil,
