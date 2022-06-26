@@ -1,0 +1,181 @@
+\section{Continuous Function}
+
+\begin{definition}[continuous]\label{def:Continuous}\footnote{
+      As the continuity of a function is different as the topological spaces are different. So if we want to emphasis this fact, we say that \mt{f} is continuous \defineNewWorld{relative}\label{def:ContinuousRelativeTo} to specific topologies on \mtb{X} and \mtb{Y}.
+}
+      Let \mtb{X} and \mtb{Y} be topological spaces. A function \mt{f: \mathbb{X}\rightarrow \mathbb{Y}} is said to be \defineNewWorld{continuous} if for each open subset \mt{V} of \tmb{Y}, the set \mt{f^{-1}(V)} is an open subset of \mtb{X}.
+\end{definition}
+
+\begin{theorem}
+      Let \mtb{X} and \mtb{Y} be topological spaces; let \mt{f: \mathbb{X}\rightarrow\mathbb{Y}}. Then the following are equivalent.
+      \begin{enumerate}
+            \item \mt{f} is continuous.
+            \item For every subset \mt{A} of \mt{X}, one has \mt{f(\closure{A})\subseteq\closure{f(A)}}.
+            \item For every closed set \mt{B} of \mtb{Y}, the set \mt{f^{-1}(B)} is closed in \mtb{X}.
+            \item For each \mt{x\in\mathbb{X}} and each neighbourhood of \mt{V} of \mt{f(x)}, there is a neighbourhood \mt{U} of \mt{x} such that \mt{f(U) \subseteq V}.
+      \end{enumerate}
+\end{theorem}
+
+\begin{proof}
+
+      \hspace{1em}
+
+      1 \mt{\Rightarrow} 3:
+
+      Let \mt{A} be a open set in \mtb{Y}. \mt{f^{-1}(\mathbb{Y}-A) = \mathbb{X} - f^{-1}(A)}.
+      
+      \vspace{1em}
+
+      3 \mt{\Rightarrow} 1:
+
+      Let \mt{A} be a closed set in \mtb{Y}. \mt{f^{-1}(\mathbb{Y}-A) = \mathbb{X} - f^{-1}(A)}.
+
+      \vspace{1em}
+
+      1 \mt{\Rightarrow} 2:
+
+      For \mt{x \in \closure{A}}, we take a open set \mt{f(x) \in U \subseteq \mathbb{Y}}. Thus \mt{x \in f^{-1}(U) \cap A \neq \emptyset}. Thus \mt{U \cap f(A) \neq \emptyset}. So \mt{f(x) \in \closure{f(A)}}. Thus \mt{f(\closure{A})\subseteq\closure{f(A)}}.
+
+      \vspace{1em}
+
+      2 \mt{\Rightarrow} 3:
+
+      Suppose \mt{f} is not continuous. Then there must exists \mt{V}, such that \mt{f^{-1}(V) = U} is not closed. Thus \mt{\closure{U} \supset B = f^{-1}(A)}. Thus \mt{f{\closure{B}} \supset A}. However \mt{f(\closure{B}) \subseteq \closure{f(B)} = A}. There is a contradiction. So \mt{f} must be continuous.
+
+      \vspace{1em}
+
+      1 \mt{\Rightarrow} 4:
+
+      For every neighbourhood \mt{V} of \mt{f(x)}, \mt{f^{-1}(V)} is a neighbourhood of \mt{x} that \mt{f(f^{-1}(V)) \subseteq V}.
+
+      \vspace{1em}
+
+      4 \mt{\Rightarrow} 1:
+
+      We take a open set \mt{V} of \mtb{Y}. Let \mt{S} be the collection of all open set \mt{U} in \mtb{X} such that \mt{f(U) \subseteq V}. The set cannot be empty unless \mt{f^{-1}(V) = \emptyset}. Let \mt{U_{0}} denote the union of all the element in \mt{S}. We prove that \mt{U_{0} = f^{-1}(V)}.
+
+      For all element \mt{x \in U_{0}}, \mt{f(x) \in V}. Thus \mt{U_{0} \subseteq f^{-1}(V)}.
+
+      For all element \mt{x \in f^{-1}(V)}. There is a \mt{U'} such that \mt{x \in U', f(U')\subseteq V}. This follows from the condition 4. Thus \mt{U' \in S}. Thus \mt{x \in U_{0}}. Thus \mt{U_{0} \subseteq f^{-1}(V)}. As \mt{U_{0}} is union of open set, \mt{U_{0}} is also open. Thus, \mt{f^{-1}(V)} is also open.
+      
+      Thus \mt{f} is continuous.
+\end{proof}
+
+\begin{definition}[homeomorphism]\label{def:Homeomorphism}\footnote{
+      A equivalent way to define homeomorphism, is that for any open subset \mt{U} of \mtb{X}, \mt{f(U)} is open \ioi \mt{U} is open.
+}
+      Let \mtb{X} and \mtb{Y} be topological space; let \mt{f: \mathbb{X} \rightarrow \mathbb{Y}} be a bijection. If both the function \mt{f} and the inverse function
+      \begin{equation*}
+            f^{-1}: \mathbb{Y} \rightarrow \mathbb{X}
+      \end{equation*}
+      are continuous, then f is called a \defineNewWorld{homeomorphism}
+\end{definition}
+
+\begin{definition}[topological imbedding]\label{def:TopologicalImbedding}
+      Suppose that \mt{f: \mathbb{X} \rightarrow \mathbb{Y}} is an injective continuous map, where \mtb{X} and \mtb{Y} are topological spaces. Let \mtb{Z} be the image set \mt{f(\mathbb{X})}, considered as a subspace of \mtb{Y}; then the function \mt{f': \mathbb{X} \rightarrow \mathbb{Z}} obtained by restricting the range of \mt{f} is bijective. If \mt{f'} happens to be a homeomorphism of \mtb{X} with \mtb{Z}, we say that the map \mt{f: \mathbb{X} \rightarrow \mathbb{Y}} is a \defineNewWorld{topological imbedding}, or simply an \defineNewWorld{imbedding}, of \mtb{X} in \mtb{Y}.
+\end{definition}
+
+\begin{theorem}[Rules for constructing continuous functions]\label{theorem:RulesForConstructingContinuousFunctions}
+      Let \mtb{X}, \mtb{Y}, and \mtb{Z} be topological spaces.
+      \begin{enumerate}
+            \item (Constant function) If \mt{f: \mathbb{X} \rightarrow \mathbb{Y}} maps all of \mtb{X} into the single point \mt{y_{0}} of \mtb{Y}, then \mt{f} is continuous.
+            \item (Inclusion) If \mt{A} is a subspace of \mtb{X}, the inclusion function \mt{j: A \rightarrow \mathbb{X}} is continuous.
+            \item (Composites) If \mt{f: \mathbb{X}\rightarrow \mathbb{Y}} and \mt{g:\mathbb{Y}\rightarrow\mathbb{Z}} are continuous, then the map \mt{g \circ f: \mathbb{X} \rightarrow \mathbb{Z}} is continuous.
+            \item (Restricting the domain) If \mt{f: \mathbb{X} \rightarrow \mathbb{Y}} is continuous, and if \mt{A} is a subspace of \mtb{X}, then the restriction function \mt{f|A : A \rightarrow \mathbb{Y}} is continuous.
+            \item (Restricting or expanding the range) Let \mt{f:\mathbb{X}\rightarrow\mathbb{Y}} is continuous. Let \mtb{Z} be a subspace of \mtb{Y} containing the image \mt{f(\mathbb{X})}, the function \mt{h: \mathbb{X}\rightarrow \mathbb{Z}} obtained by restricting the range of \mt{f} is continuous. If \mtb{Z} is a space having \mtb{Y} as a subspace, then the function \mt{h: \mathbb{X}\rightarrow\mathbb{Y}} obtained by expanding the range of \mt{f} is continuous.
+            \item (Local formulation of continuity) The map \mt{f: \mathbb{X}\rightarrow\mathbb{Y}} is continuous if \mtb{X} can be written as the union of open sets \mt{U_{\alpha}} such set \mt{f|U_{\alpha}} is continuous for each \mt{\alpha}
+      \end{enumerate}
+\end{theorem}
+
+\begin{proof}
+
+      \hspace{1em}
+
+      \begin{enumerate}
+            \item \mt{f^{-1}(U)} of any open set \mt{U} is \mtb{X}, thus \mt{f} is continuous.
+            \item For every open subset \mt{U} of \mtb{X}, \mt{j^{-1}(U) = U\cap A} is continuous in \mt{A}. Thus \mt{j} is a continuous function.
+            \item For every open subset \mt{U} of \mtb{Z}, \mt{f^{-1}(U)} is open in \mtb{Y}, and \mt{g^{-1}(f^{-1}(U))} is open in \mtb{X}. Thus, \mt{g \circ f} is continuous
+            \item For every open subset \mt{U} of \mtb{Y}, \mt{f^{-1}(U)} is open in \mtb{X}, thus \mt{f^{-1}(U)\cap A} is open in \mt{A}. Thus the function \mt{f|A} is continuous.
+            \item If \mtb{Z} is a subspace of \mtb{Y}, then every open subset of \mtb{Z} can be represented as \mt{U\cap\mathbb{Z}}, where \mt{U} is a open subset of \mtb{Y}. Thus \mt{h^{-1}(U\cap\mathbb{Z})=g^{-1}(\mathbb{Z})\cap g^{-1}(U) = \mathbb{X}\cap g^{-1}(U)} which is a open subset of \mt{X}, thus \mt{h} is continuous.
+            
+            If \mtb{Y} is a subspace of \mtb{Z}. Then we take a open subset \mt{U} of \tmb{Z}. \mt{h^{-1}(U) = g^(-1)(U\cap \mathbb{Y}) } which is open in \mtb{X}, thus \mt{h} is continuous.
+
+            \item if \mt{f|U_{\alpha}} is continuous for each \mt{\alpha}. For every open subset \mt{U} of \mtb{Y}.
+            \begin{equation*}
+                  U = \cup_{\alpha} (U_{\alpha}\cap U)
+            \end{equation*}
+            where \mt{U_{\alpha}\cap U} is open both in \mt{U_{\alpha}} and in \mtb{Y}. 
+
+            Thus,
+            \begin{eqnarray*}
+                  f^{-1}(U) &=& f^{-1}(\cup_{\alpha} (U_{\alpha}\cap U)) \\
+                  &=& \cup_{\alpha} ((f|U_{\alpha})^{-1}(U_{\alpha}\cap U))
+            \end{eqnarray*}
+            and each \mt{(f|U_{\alpha})^{-1}(U_{\alpha}\cap U)} is open, thus \mt{f^{-1}(U)} is open.
+      \end{enumerate}
+\end{proof}
+
+\begin{theorem}[The pasting lemma]\label{theorem:ThePastingLemma}\footnote{
+      The proof of this theorem is similar to the "Local formulation of continuity" condition of "Rules for constructing continuous functions", so we omit the proof here.
+}
+      Let \mt{
+            \mathbb{X} = A \cup B
+      }, where \mt{A,B} are closed in \mtb{X}. Let \mt{f: A\rightarrow \mathbb{Y}} and \mt{g: B \rightarrow \mathbb{Y}} be continuous. If \mt{f(x)=g(x)} for every \mt{x\in A\cap B}, then \mt{f,g} combine to give a continuous function \mt{h: \mathbb{X}\rightarrow\mathbb{Y}}, defined by setting \mt{h(x)=f(x),x\in A} and \mt{h(x)=g(x),x\in B}.
+\end{theorem}
+
+\begin{theorem}[Maps into products]\label{theorem:MapsIntoProducts} \footnote{
+      The map \mt{f_{1},f_{2}} are called the \defineNewWorld{coordinate functions}\label{def:CoordinateFunctions} of \mt{f}
+}
+      Let \mt{f: A \rightarrow \mathbb{X}\times\mathbb{Y}} be given by the equation
+      \begin{equation*}
+            f(a) = (f_{1}(a),f_{2}(a))
+      \end{equation*}
+
+      Then, the function \mt{f} is continuous \ioi the functions
+      \begin{equation*}
+            f_{1}: A \rightarrow \mathbb{X}, f_{2}: A \rightarrow \mathbb{Y}
+      \end{equation*}
+      are continuous.
+\end{theorem}
+
+\begin{proof}
+      Let \mt{\pi_{1},\pi_{2}} be the projection function
+      \begin{eqnarray*}
+            \pi_{1}&:& \mathbb{X}\times\mathbb{Y} \rightarrow \mathbb{X} \\
+            \pi_{2}&:& \mathbb{X}\times\mathbb{Y} \rightarrow \mathbb{Y}
+      \end{eqnarray*}
+
+      \vspace{1em}
+
+      We first proof that if \mt{U} is an open subset of \productSet{\mathbb{X}}{\mathbb{Y}},
+      \begin{equation*}
+            f^{-1}(U) = f_{1}^{-1}(\pi_{1}(U)) \cap f_{2}^{-1}(\pi_{2}(U))
+      \end{equation*}
+
+      Let \mt{x \times y \in U}, \mt{f^{-1}(x \times y)} contains all \mt{a} such that \mt{f(a) = x \times y}.
+
+      Then for any \mt{a \in f^{-1}(x \times y)}, \mt{a \in f_{1}^{-1}(\pi_{1}(x \times y)), a \in f_{2}^{-1}(\pi_{2}(x \times y))}.
+
+      Thus, \mt{f^{-1}(x \times y) \subseteq f_{1}^{-1}(\pi_{1}(x \times y)) \cap f_{2}^{-1}(\pi_{2}(x \times y))}.
+
+      Thus \mt{f^{-1}(U) \subseteq f_{1}^{-1}(\pi_{1}(U)) \cap f_{2}^{-1}(\pi_{2}(U))}.
+
+      \vspace{1em}
+
+      Also, if \mt{a \in f_{1}^{-1}(\pi_{1}(x \times y)), a \in f_{2}^{-1}(\pi_{2}(x \times y))}, \mt{f_{1}(a) = x, f_{2}(a) = y}.
+
+      Thus \mt{f(a) = x \times y}.
+      Thus \mt{a \in f^{-1}(x \times y)}.
+
+      Thus \mt{f^{-1}(U) = f_{1}^{-1}(\pi_{1}(U)) \cap f_{2}^{-1}(\pi_{2}(U))}
+
+      \vspace{1em}
+
+      Let \mt{U} be any open subset of \productSet{\mathbb{X}}{\mathbb{Y}}
+
+      \begin{equation*}
+            f^{-1}(U) = f_{1}^{-1}(\pi_{1}(U)) \cap f_{2}^{-1}(\pi_{2}(U))
+      \end{equation*}
+
+      Where \mt{f_{1}^{-1}(\pi_{1}(U))} and \mt{f_{2}^{-1}(\pi_{2}(U))} are both open set. Thus \mt{f^{-1}(U)} is open.
+\end{proof}
