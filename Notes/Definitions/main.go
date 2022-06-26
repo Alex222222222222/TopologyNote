@@ -14,7 +14,7 @@ type Definition struct {
 	SubDefinition *Definitions
 }
 
-const SubDefinitionPre = "\\hspace{2em}"
+const SubDefinitionPre = "\\hspace{1em}"
 const RefPre = "def"
 const LineBreak = "\\vspace{1em}"
 
@@ -81,6 +81,35 @@ func main() {
 						{
 							"strictly coarser",
 							"Comparable",
+							nil,
+						},
+					},
+				},
+			},
+			{
+				"coordinate functions",
+				"CoordinateFunctions",
+				nil,
+			},
+			{
+				"topological imbedding",
+				"TopologicalImbedding",
+				nil,
+			},
+			{
+				"homeomorphism",
+				"Homeomorphism",
+				nil,
+			},
+			{
+				"continuous",
+				"Continuous",
+				&Definitions{
+					SubOrder: 1,
+					Def: []*Definition{
+						{
+							"continuous relative to",
+							"ContinuousRelativeTo",
 							nil,
 						},
 					},
