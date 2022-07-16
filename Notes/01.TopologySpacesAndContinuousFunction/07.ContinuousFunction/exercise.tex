@@ -1,0 +1,120 @@
+\subsection{Exercise}
+
+\begin{enumerate}
+      \item Let \mtb{Y} be an ordered set in the order topology. Let \mt{
+            f,g: \mathbb{X} \rightarrow \mathbb{Y}
+      } be continuous, show that the set \mt{A} \mt{
+            \{ x | f(x) \le g(x) \}
+      } is closed in \mtb{X}.
+
+      \begin{proof}
+            We only need to proof \mt{\mathbb{X}-A} is open in \mtb{X}. We take \mt{x \in \mathbb{X}-A}. Thus \mt{f(x) > g(x)}.
+
+            Let \mt{U_{1},U{2}} be the open set in \mtb{Y} that met the following demand
+            \begin{eqnarray*}
+                  &&\forall y_{1} \in U_{1}, y_{2} \in U_{2}, y_{1} > y_{2} \\
+                  &&f(x) \in U_{1}, g_{x} \in U_{2}
+            \end{eqnarray*}
+
+            As \mtb{Y} is an ordered set, \mt{U_{1},U{2}} must exist.
+
+            Let \mt{U = f^{-1}(U_{1}) \cap g^{-1}(U_{2})}. It is obvious that \mt{U} is a open set, and \mt{x \in U}.
+
+            Also, for any \mt{y \in U}. \mt{f(y)>g(y)}. Thus \mt{U \subseteq A}. Thus \mt{A} is an open set.
+      \end{proof}
+
+      \item Let \mt{\{A_{\alpha}\}} be a collection of subsets of \mtb{X}; let \mt{\mathbb{X} = \cup_{\alpha}A_{\alpha}}. Lef \mt{f: \mathbb{X}\rightarrow \mathbb{Y}}; suppose that \mt{f|A_{\alpha}} is continuous for each \mt{\alpha}. An indexed family of sets \mt{\{A_{\alpha}\}} is said to be \defineNewWorld{locally finite}\label{def:LocallyFinite} if each point \mt{x} of \mtb{X} has a neighbourhood that intersect \mt{A_{\alpha}} for only finitely main values of \mt{\alpha}. Show that if the family \mt{\{A_{\alpha}\}} is locally finite and each \mt{A_{\alpha}} is closed, then \mt{f} is continuous.
+      
+      \begin{proof}
+            For any closed subset \mt{U} of \mtb{Y}. Let
+            \begin{equation*}
+                  V = \cup f|A_{\alpha}(U)
+            \end{equation*}
+
+            We prove that \mt{V} is closed, so, \mt{f} is continuous.
+
+            To prove that \mt{V} is closed, we prove that \mt{\closure{V} = V}. That is for any \mt{x \in \closure{V}}, we prove \mt{x \in V}. For any neighbourhood \mt{B} if \mt{x}, let \mt{C_{B}} denote the set that contain all \mt{\alpha}, such that \mt{f|A_{\alpha(U)}} intersect with \mt{B}. As \mt{B} intersect with \mt{V}, \mt{C_{B}} can not be empty.
+
+            Let 
+            \begin{equation*}
+                  \mathbb{C} = \{ C_{B} | B \text{ be a neighbourhood of } x \}
+            \end{equation*}
+
+            As \mt{\{A_{\alpha}\}} is locally definite, \mtb{C} contain at least one element with finite elements.
+
+            Also
+            \begin{equation*}
+                  C_{B_{1} \cap B_{2}} \subseteq C_{B_{1}} \cap C_{B_{2}}
+            \end{equation*}
+            
+            Let \mt{\le} be a partial order on the \mtb{C}. If \mt{C_{B_{1}} \subseteq C_{B_{2}}}, we say that \mt{ C_{B_{1}} \ge C_{B_{2}} }.
+
+            If there is chain in \mtb{C}
+            \begin{equation*}
+                  C_{B_{1}} \le C_{B_{2}} \dots
+            \end{equation*}
+
+            Let \mt{C_{B_{0}}} be a element of \mtb{C} with finite element. If \mt{C_{B_{0}} \subseteq C_{B_{1}}, C_{B_{0}} \subseteq C_{B_{2}} \dots}. Then \mt{C_{B_{0}}} is a upper bound of the chain.
+
+            If \mt{C} is not a subset of all element of the chain. Then we construct a new set say 
+            \begin{equation*}
+                  D = \{ C_{B_{0} \cap B_{1}}, C_{B_{0} \cap B_{2}} \dots \}
+            \end{equation*}
+
+            Let
+            \begin{equation*}
+                  \mathbb{D} = \{ C_{D_{1} \cap D_{2} \cap \dots } | C_{D_1}, C_{D_2}\dots \in D \}
+            \end{equation*}
+
+            As \mt{C_{B_{0}}} is a finite set, \mt{D} is a finite set, \mtb{D} is also a finite set. Thus there must be a maximal element \mt{E \in \mathbb{D}} that is the subset of all element of \mtb{D}. Then \mt{E} is a subset of all element of the chain. Thus \mt{E} is a upper bound of the chain.
+
+            Thus, there must be a maximal element \mt{C_{F}} of \mtb{C}, that is a subset of all element of \mtb{C}.
+
+            Let \mt{G} be the set be the union of all element of \mt{C_{F}}.
+
+            As \mt{C_{F}} is finite, \mt{G} is closed. And all neighbourhood of \mt{x} intersect with \mt{G}. Thus \mt{x \in G}
+            
+            As \mt{G} is a subset of \mt{V}, \mt{x \in V}. So \mt{V} is closed. And \mt{f} is a continuous function on \mtb{X}.
+
+      \end{proof}
+
+      \item Let \mt{A} be a subset of topological space \mtb{X}, let \mtb{Y} be a Hausdorff space. Let \mt{
+            f: A \rightarrow \mathbb{Y}
+      } be a continuous function. Let \mt{
+            g: \closure{A} \rightarrow \mathbb{Y}
+      } also be a continuous function where \mt{
+            g(x) = f(x), x \in A
+      }. Prove that \mt{g} us uniquely determined by \mt{f}.\footnote{
+            It is possible that \mt{g} does not exist.
+
+            Let \mtb{X} be the real line with order topology. Let \mtb{Y} be \mt{\{0,1\}}.
+
+            Let \mt{A = \mathbb{X} - \{0\} }.
+
+            Let,
+            \begin{equation*}
+                  f(x) = \begin{cases}
+                        1, & x > 0 \\
+                        0, & x < 0
+                  \end{cases}
+            \end{equation*}
+
+            So, it is obvious that \mt{f} is a continuous function on \mtb{X}. However \mt{g} does not exist in this case.
+      }
+
+      \begin{proof}
+            Say \mt{g} and \mt{h} are two distinct function that met the demand.
+
+            So there exist \mt{x_{0}} such that \mt{g(x_{0}) \neq h(x_{0})}.
+            
+            As \mtb{Y} is a Hausdorff space, so there exist adjoint open subset \mt{g(x_{0}) \in U} and \mt{h(x_{0}) \in V}.
+
+            Then \mt{g^{-1}(U)} and \mt{h^{-1}(V)} are both open subset of \mtb{X} that contain \mt{x_{0}}. 
+
+            If \mt{ g^{-1}(U) \cap h^{-1}(V) \cap A \neq \emptyset }. Then there exist \mt{x_{1} \in g^{-1}(U) \cap h^{-1}(V) \cap A } such that \mt{g(x_{1}) \in U} and \mt{h(x_{1}) \in V} and \mt{g(x_{1})=h(x_{1})}. However \mt{U} and \mt{V} are disjoint. So there is a contradiction.
+
+            As \mt{^{-1}(U) \cap h^{-1}(V)} is a open subset contain \mt{x_{0}}. So \mt{^{-1}(U) \cap h^{-1}(V)} must intersect with \mt{A}. So it is impossible that \mt{ g^{-1}(U) \cap h^{-1}(V) \cap A = \emptyset }.
+
+            So \mt{g=h}.
+      \end{proof}
+\end{enumerate}
