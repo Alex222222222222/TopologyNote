@@ -87,6 +87,11 @@ func main() {
 				},
 			},
 			{
+				"locally finite",
+				"LocallyFinite",
+				nil,
+			},
+			{
 				"coordinate functions",
 				"CoordinateFunctions",
 				nil,
@@ -414,7 +419,7 @@ func main() {
 		alphabet[k].sort()
 
 		file.Write([]byte(
-			fmt.Sprintf("%s\\large{\\textbf{%s}}\n\n", LineBreak, strings.ToUpper(k)),
+			fmt.Sprintf("%s\\noindent\\large{\\textbf{%s}}\n\n", LineBreak, strings.ToUpper(k)),
 		))
 
 		file.Write([]byte(alphabet[k].generateString(0)))
