@@ -9,6 +9,31 @@
 
 \usepackage{multicol}
 
+% see https://tex.stackexchange.com/a/39755
+% Simulated package file
+\begin{filecontents}{envcode.sty}
+      \newcommand\NewEnvCode[2]{%
+       \expandafter\def\csname code@#1\endcsname{#2}%
+       \expandafter\def\csname change@code@#1\endcsname{%
+        \expandafter\let\expandafter\Code\csname code@#1\endcsname
+       }%
+      }
+      
+      \newcommand\MakeDefault{%
+       \expandafter\let\expandafter\code@@default\csname code@\@currenvir\endcsname
+      }
+      
+      \newcommand\RunEnvCode{%
+       \let\Code=\code@@default
+       \csname change@code@\@currenvir\endcsname
+       \Code
+      }
+      
+      \AtBeginDocument{\MakeDefault}
+\end{filecontents}
+
+\usepackage{envcode}
+
 % for cross reference
 % \usepackage{hyperref}
 
@@ -22,12 +47,19 @@
 \newtheorem{corollary}{Corollary}[section]
 \newtheorem{proposition}{Proposition}[section]
 
+\NewEnvCode{document}{default code}
+\NewEnvCode{theorem}{ theorem }
+\NewEnvCode{lemma}{ lemma }
+\NewEnvCode{corollary}{ corollary }
+\NewEnvCode{proposition}{ proposition }
+\NewEnvCode{definition}{ definition }
+
 \title{Topology Note}
 \author{Alex}
 
 \newcommand{\textmathbb}[1]{ $ \mathbb{#1} $ }
 \newcommand{\defineNewWord}[1]{\textit{\textbf{#1}}}
-\newcommand{\omitObviuos}{\footnote{We omit the proof of this lemma as it is obvious.}}
+\newcommand{\omitObviuos}{\footnote{We omit the proof of this \RunEnvCode as it is obvious.}}
 \newcommand{\mt}[1]{ $ #1 $ }
 \newcommand{\tmb}[1]{\textmathbb{#1}}
 \newcommand{\mtb}[1]{\textmathbb{#1}}
