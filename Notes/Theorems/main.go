@@ -68,6 +68,11 @@ func main() {
 		SubOrder: 0,
 		Def: []*Definition{
 			{
+				"Comparison of the box and product topologies",
+				"ComparisonOfBoxProductTopology",
+				nil,
+			},
+			{
 				"Rules for constructing continuous functions",
 				"RulesForConstructingContinuousFunctions",
 				nil,
