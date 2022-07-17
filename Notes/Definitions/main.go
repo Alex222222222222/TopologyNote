@@ -87,6 +87,36 @@ func main() {
 				},
 			},
 			{
+				"product space",
+				"ProductTopologyInfinite",
+				nil,
+			},
+			{
+				"projection mapping",
+				"ProjectionMapping",
+				nil,
+			},
+			{
+				"cartesian product",
+				"CartesianProduct",
+				nil,
+			},
+			{
+				"J-tuple",
+				"JTuple",
+				nil,
+			},
+			{
+				"product topology",
+				"ProductTopologyInfinite",
+				nil,
+			},
+			{
+				"box topology",
+				"BoxTopology",
+				nil,
+			},
+			{
 				"locally finite",
 				"LocallyFinite",
 				nil,
