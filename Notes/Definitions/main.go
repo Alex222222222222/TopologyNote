@@ -87,6 +87,76 @@ func main() {
 				},
 			},
 			{
+				"uniform topology",
+				"UniformMetric",
+				nil,
+			},
+			{
+				"uniform metric",
+				"UniformMetric",
+				nil,
+			},
+			{
+				"square metric",
+				"SquareMetric",
+				nil,
+			},
+			{
+				"euclidean metric",
+				"EuclideanMetric",
+				nil,
+			},
+			{
+				"norm",
+				"Norm",
+				nil,
+			},
+			{
+				"standard bounded metric",
+				"StandardBoundedMetric",
+				nil,
+			},
+			{
+				"diameter",
+				"Diameter",
+				nil,
+			},
+			{
+				"bounded",
+				"Bounded",
+				nil,
+			},
+			{
+				"metric space",
+				"MetricSpace",
+				nil,
+			},
+			{
+				"metrizable",
+				"Metrizable",
+				nil,
+			},
+			{
+				"metric topology",
+				"MetricTopology",
+				nil,
+			},
+			{
+				"\\mt{\\epsilon}-ball centered at \\mt{x}",
+				"EpsilonBallCenteredAtX",
+				nil,
+			},
+			{
+				"distance",
+				"Distance",
+				nil,
+			},
+			{
+				"metric",
+				"Metric",
+				nil,
+			},
+			{
 				"product space",
 				"ProductTopologyInfinite",
 				nil,
