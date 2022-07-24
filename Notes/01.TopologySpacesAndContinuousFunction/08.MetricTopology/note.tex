@@ -1,0 +1,375 @@
+\section{Metric Topology}
+
+\begin{definition}[metric]\label{def:Metric}
+      A \defineNewWord{metric} on a set \mtb{X} is a function
+      \begin{equation*}
+            d: \mathbb{X} \times \mathbb{X} \rightarrow \mathbb{R}
+      \end{equation*}
+      having the following properties:
+      \begin{enumerate}
+            \item \mt{
+                  d(x,y) \geq 0
+            } for all \mt{
+                  x,y \in \mathbb{X}
+            }; equality hold if and only if \mt{
+                  x = y
+            }
+
+            \item \mt{
+                  d(x,y) = d(y,x), \forall x,y \in \mathbb{X}
+            }
+
+            \item (Triangle Inequality) \mt{
+                  d(x,y) + d(y,z) \geq d(x,z), \forall x,y,z \in \mathbb{X}
+            }
+      \end{enumerate}
+
+      Given a metric \mt{d} on \mtb{X}, the number \mt{
+            d(x,y)
+      } is often called the \defineNewWord{distance}\label{def:Distance} between \mt{x} and \mt{y} in the metric \mt{d}.
+\end{definition}
+
+\begin{definition}[\mt{\epsilon}-ball centered at \mt{x}]\label{def:EpsilonBallCenteredAtX}\footnote{
+      When no confusion will arise, the metric \mt{d} may be omit in \mt{
+            B_{d}(x,\epsilon)
+      }
+}
+      Given metric \mt{d} on a set \mtb{X} and \mt{\epsilon > 0}. The set
+      \begin{equation*}
+            B_{d}(x,\epsilon) = \{
+                  y | d(x,y) < \epsilon
+            \}
+      \end{equation*}
+      is called \mt{\epsilon}-ball centered at \mt{x}.
+\end{definition}
+
+\begin{definition}[metric topology]\label{def:MetricTopology}
+      If \mt{d} is a metric on the set \mtb{X}, then the collection of all \mt{\epsilon}-balls \mt{
+            B_{d}(x,\epsilon)
+      }, such that \mt{
+            x \in \mathbb{X}
+      } and \mt{
+            \epsilon > 0
+      }, is a basis for a topology on \mtb{X}, called the \defineNewWord{metric topology} induced by \mt{d}.
+\end{definition}
+
+\begin{definition}[metrizable]\label{def:Metrizable}
+      If \mtb{X} is topological space, \mtb{X} is said to be \defineNewWord{metrizable} if there exists a metric \mt{d} on the set \mtb{X} that induces the topology of \mtb{X}. A \defineNewWord{metric space}\label{def:MetricSpace} is a metrizable space \mtb{X} together with a specific metric \mt{d} that gives the topology of \mtb{X}.
+\end{definition}
+
+\begin{definition}[bounded]\label{def:Bounded}
+      Let \mtb{X} be a metric space with metric \mt{d}. A subset \mt{A} of \mtb{X} is said to be \defineNewWord{bounded} if there is some number \mt{M} such that
+      \begin{equation*}
+            d(a_{1},a_{2}) \leq M
+      \end{equation*}
+      for every pair \mt{a_{1}} and \mt{a_{2}} if points of \mt{A}.
+\end{definition}
+
+\begin{definition}[diameter]\label{def:Diameter}
+      Let \mtb{X} be a metric space with metric \mt{d}. Let \mt{A} be a bounded subset of \mtb{X}. Then \defineNewWord{diameter} is defined to be
+      \begin{equation*}
+            \diam A = \sup\{
+                  d(a_{1},a_{2}) | a_{1}, a_{2} \in A      
+            \}
+      \end{equation*}
+\end{definition}
+
+\begin{theorem}
+      Let \mtb{X} be a metric space with metric \mt{d}. Define \mt{
+            \overline{d}: \mathbb{X} \times \mathbb{X} \rightarrow \mathbb{R}
+      } by the equation
+      \begin{equation*}
+            \overline{d}(x,y) = min\{
+                  d(x,y),1
+            \}
+      \end{equation*}
+
+      Then \mt{
+            \overline{d}
+      } is a metric that induces the same topology as \mt{d}.
+
+      The metric \mt{
+            \overline{d}
+      } is called the \defineNewWord{standard bounded metric}\label{def:StandardBoundedMetric} corresponding to \mt{d}
+\end{theorem}
+
+\begin{proof}
+      It is obvious that \mt{
+            \overline{d}
+      } is a metric.
+
+      To prove that \mt{d} and \mt{
+            \overline{d}
+      } induces the same topology, it is suffice to prove that for all \mt{a \in X} and \mt{\epsilon > 0} there exists \mt{
+            \{a_{\alpha}\}
+      } and \mt{
+            \{\epsilon_{\alpha}\}
+      } where \mt{
+            \epsilon_{\alpha} \leq 1
+      } such that
+      \begin{equation*}
+            B_{d}(a,\epsilon) = \bigcup B_{\overline{d}}(a_{\alpha},\epsilon_{\alpha})
+      \end{equation*}
+
+      For every \mt{
+            x \in B_{d}(a,\epsilon)
+      } take \mt{
+            a_{x} = x 
+      } and \mt{
+            \epsilon_{x} < min(\epsilon - d(a,x),1)
+      }. Then
+      \begin{equation*}
+            B_{d}(a,\epsilon) \supseteq B_{\overline{d}}(a_{x},\epsilon_{x})
+      \end{equation*}
+      as for all \mt{
+            y \in B_{\overline{d}}(a_{x},\epsilon_{x})
+      }
+      \begin{eqnarray*}
+            d(a,y) &\leq& d(a,a_{x}) + d(a_{x},y) \\
+            &<& min(\epsilon - d(a,x),1) + d(a,a_{x}) \\
+            &\leq& \epsilon
+      \end{eqnarray*}
+
+      Thus
+      \begin{equation*}
+            B_{d}(a,\epsilon) = \bigcup_{
+                  x \in B_{d}(a,\epsilon)
+            } B_{\overline{d}}(a_{x},\epsilon_{x})
+      \end{equation*}
+\end{proof}
+
+\begin{definition}[norm]\label{def:Norm}
+      Given \mt{
+            x = (x_{1},\dots,x_{n})
+      } in \mt{
+            \mathbb{R}^{n}
+      }. The \defineNewWord{norm} of \mt{x} is defined by the equation
+      \begin{equation*}
+            \norm{x} = (
+                  x_{1}^{2}+\dots+x_{n}^{2}
+            )^{\frac{1}{2}}
+      \end{equation*}
+\end{definition}
+
+\begin{definition}[euclidean metric]\label{def:EuclideanMetric}
+      The euclidean metric \mt{d} on \mt{
+            \mathbb{R}^{n}
+      } is defined by
+      \begin{equation*}
+            d(x,y) = \norm{x-y}
+      \end{equation*}
+\end{definition}
+
+\begin{definition}[square metric]\label{def:SquareMetric}
+      The square metric \mt{
+            \rho
+      } on \mt{
+            \mathbb{R}^{n}
+      } is defined by
+      \begin{equation*}
+            \rho(x,y) = max\{
+                  |x_{1}-y_{1}|,\dots,|x_{n}-y_{n}|
+            \}
+      \end{equation*}
+\end{definition}
+
+\begin{lemma}
+      Let \mt{d} and \mt{d'} be two metrics on the set \mtb{X}; let \mtb{T} and \mtb{T'} be the topology induced by \mt{d} and \mt{d'} respectively. Then \mtb{T'} is finer than \mt{T} if and only if for all \mt{
+            x \in \mathbb{X}
+      } and \mt{
+            \epsilon > 0
+      }, there exists a \mt{
+            \delta > 0
+      } such that
+      \begin{equation*}
+            B_{d'}(x,\delta) \subseteq B_{d}(x,\epsilon)
+      \end{equation*}
+\end{lemma}
+
+\begin{proof}
+      If \mtb{T'} is finer than \mtb{T}. Then for all \mt{
+            B_{d}(x,\epsilon)
+      } there exists a open set \mt{U} that containing \mt{x} such that \mt{
+            U \subseteq B_{d}(x,\epsilon)
+      }. As \mt{
+            \{{B_{d'}(x,\delta)}\}
+      } is a basis of \mt{T'}, then there exists \mt{
+            B_{d'}(x,\delta) \subseteq U
+      } that containing \mt{x}.
+
+      If for all \mt{
+            B_{d}(x,\epsilon)
+      }, there exists \mt{
+            B_{d'}(x,\delta) \subseteq B_{d}(x,\epsilon)
+      }. Then as \mt{
+            \{{B_{d'}(x,\epsilon)}\}
+      } and \mt{
+            \{{B_{d}(x,\epsilon)}\}
+      } are both basis, then \mtb{T'} is finer than \mt{T}.
+\end{proof}
+
+\begin{theorem}\omitObviuos
+      The topologies on \mt{
+            \mathbb{R}^{n}
+      } induced by the euclidean metric \mt{d} and the square metric \mt{\rho} are the same as the product topology on \mt{
+            \mathbb{R}^{n}
+      }.
+\end{theorem}
+
+\begin{definition}[uniform metric, uniform topology]\label{def:UniformMetric}
+      Given an index set \mt{J}, and given points \mt{
+            x = (x_{\alpha})_{\alpha \in J}
+      } and \mt{
+            y = (y_{\alpha})_{\alpha \in J}
+      } of \mt{
+            \mathbb{R}^{J}
+      }, let us define a metric \mt{
+            \overline{\rho}
+      } on \mt{
+            \mathbb{R}^{J}
+      } by the equation
+      \begin{equation*}
+            \overline{\rho}(x,y) = \sup\{
+                  \overline{d}(x_{\alpha},y_{\alpha}) | \alpha \in J
+            \}
+      \end{equation*}
+      where \mt{
+            \overline{d}
+      } is the standard bounded metric on \mtb{R}. \mt{
+            \overline{\rho}
+      } is called the \defineNewWord{uniform metric} on \mt{
+            \mathbb{R}^{J}
+      }, and the topology it induces is called the \defineNewWord{uniform topology}
+\end{definition}
+
+\begin{theorem} \omitObviuos
+      The uniform topology on \mt{
+            \mathbb{R}^{J}
+      } is finer than the product topology and is coarser than the box topology.
+\end{theorem}
+
+\begin{theorem}
+      Let \mt{
+            \overline{d}(a,b) = \min\{
+                  |a-b|,1
+            \} 
+      } be the standard bounded metric on \mtb{R}. If \mt{x} nad \mt{y} are two points of \mt{
+            \mathbb{R}^{\omega}
+      }, define
+      \begin{equation*}
+            D(x,y) = \sup\left\{
+                  \frac{\overline{d}(x_{i},y_{i})}{i}
+            \right\}
+      \end{equation*}
+
+      Then \mt{D} is a metric that induces the product topology on \mt{
+            \mathbb{R}^{\omega}
+      }
+\end{theorem}
+
+\begin{proof}
+      The properties of a metric are satisfied trivially except for the triangle inequality, which is proved by noting that for all \mt{i},
+      \begin{eqnarray*}
+            \frac{\overline{d}(x_{i},z_{i})}{i} &\le& \frac{\overline{d}(x_{i},y_{i})}{i} + \frac{\overline{d}(y_{i},z_{i})}{i} \\
+            &\le& D(x,y) + D(y,z)
+      \end{eqnarray*}
+      so that
+      \begin{equation*}
+            \sup\left\{
+                  \frac{\overline{d}(x_{i},z_{i})}{i}
+            \right\} \le D(x,y) + D(y,z)
+      \end{equation*}
+
+      The fact that \mt{D} gives the product topology requires a little more work. First, let \mt{U} be open in the metric topology and let \mt{
+            x \in U
+      }; we find an open set \mt{V} in the product topology such that \mt{
+            x \in V \supseteq U
+      }. Choose an \mt{
+            \epsilon-ball
+      } \mt{
+            B_{D}(x,\epsilon)
+      } lying in \mt{U}. Then choose \mt{N} large enough that \mt{
+            \frac{1}{N} < \epsilon
+      }. Finally, let \mt{V} be the basis element for the product topology
+      \begin{equation*}
+            V = (x_{1}-\epsilon,x_{1}+\epsilon) \times \dots \times (x_{N}-\epsilon,x_{N}+\epsilon) \times R \times R \times \dots
+      \end{equation*}
+
+      We assert that \mt{
+            V \in B_{D}(x,\epsilon)
+      }: Given any \mt{y} in \mt{
+            \mathbb{R}^{\omega}
+      }
+      \begin{equation*}
+            \frac{\overline{d}(x_{i},y_{i})}{i} \le \frac{1}{N}, \forall i \ge N
+      \end{equation*}
+
+      Therefore,
+      \begin{equation*}
+            D(x,y) \le \max\left\{
+                  \frac{\overline{d}(x_{1},y_{1})}{1},\dots,\frac{\overline{d}(x_{N},y_{N})}{N},\frac{1}{N}
+            \right\}
+      \end{equation*}
+
+      If \mt{y} is in \mt{V}, this expression is less than \mt{
+            \epsilon
+      }, so that \mt{
+            V \subseteq B_{D}(x,\epsilon)
+      }, as desired.
+
+      Conversely, consider a basis element
+      \begin{equation*}
+            U = \prod_{i \in \mathbb{Z}_{+}} U_{i}
+      \end{equation*}
+      for the product topology, where \mt{
+            U_{i}
+      } is open in \mtb{R} for \mt{
+            i = \alpha_{1},\dots,\alpha_{n}
+      } and \mt{
+            U_{i} = \mathbb{R}
+      } for all other indices \mt{i}. Given \mt{
+            x \in U
+      }, we find an open set \mt{V} of the metric topology such that \mt{
+            x \in V \supseteq U
+      }. Choose an interval \mt{
+            (x_{i}-\epsilon_{i},x_{i}+\epsilon_{i})
+      } in \mtb{R} centered about \mt{
+            x_{i}
+      } and lying in \mt{
+            U_{i}
+      } for \mt{
+            i = \alpha_{1},\dots,\alpha_{n}
+      }; choose each \mt{
+            \epsilon_{i} \le 1
+      }. Then define
+      \begin{equation*}
+            \epsilon = \min \left\{
+                  \frac{\epsilon_{i}}{i} | i = \alpha_{1},\dots,\alpha_{n}
+            \right\}
+      \end{equation*}
+
+      We assert that
+      \begin{equation*}
+            x \in B_{D}(x,\epsilon) \subseteq U
+      \end{equation*}
+
+      Let \mt{y} be a point of \mt{
+            B_{D}(x,\epsilon)
+      }. Then for all \mt{i}
+      \begin{equation*}
+            \frac{\overline{d}(x_{i},y_{i})}{i} \le D(x,y) < \epsilon
+      \end{equation*}
+
+      Now if \mt{
+            i = \alpha_{1},\dots,\alpha_{n}
+      }, then \mt{
+            \epsilon \le \frac{\epsilon_{i}}{i}
+      }, so that \mt{
+            \overline{d}(x_{i},y_{i}) < \epsilon_{i} \le 1
+      }; it follows that \mt{
+            |x_{i}-y_{i}| < \epsilon_{i}
+      }. Therefore \mt{
+            y \in \prod U_{i}
+      }, as desired.
+
+\end{proof}
