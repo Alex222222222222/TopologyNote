@@ -73,6 +73,16 @@ func main() {
 				nil,
 			},
 			{
+				"Uniform limit theorem",
+				"UniformLimitTheorem",
+				nil,
+			},
+			{
+				"The sequence lemma",
+				"TheSequenceLemma",
+				nil,
+			},
+			{
 				"Rules for constructing continuous functions",
 				"RulesForConstructingContinuousFunctions",
 				nil,
