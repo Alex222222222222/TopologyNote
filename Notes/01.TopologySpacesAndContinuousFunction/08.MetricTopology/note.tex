@@ -373,3 +373,201 @@
       }, as desired.
 
 \end{proof}
+
+\begin{definition}[Hilbert Cube]\label{def:HilbertCube}
+      The set
+      \begin{equation*}
+            H = \prod_{
+                  n \in \mathbb{Z}_{+}
+            } [0,\frac{1}{n}]
+      \end{equation*}
+      is called \defineNewWord{
+            Hilbert cube
+      }
+\end{definition}
+
+\begin{definition}[$l^{2}$-topology]\label{def:L2Topology}
+      Let \mtb{X} be the subset of \mt{
+            \mathbb{R}^{\omega}
+      } consisting of all sequences \mt{
+            x
+      } such that \mt{
+            \sum x_{i}^{2}
+      } converges.
+
+      Then the formula
+      \begin{equation*}
+            d(x,y) = \left[
+                  \sum_{i=1}^{\infty}(x_{i}-y_{i})^{2}
+            \right]^{\frac{1}{2}}
+      \end{equation*}
+      defines a metric on \mtb{X}. The topology induced by \mt{d} is called the $l^{2}$-topology.
+\end{definition}
+
+\begin{definition}[countable basis at point \mt{x}]\label{def:CountableBasisAtPointX}
+      A space is said to be have \defineNewWord{countable basis at point \mt{x}} if there is a countable collection \mt{
+            \{
+                  U_{n}
+            \}_{n \in \mathbb{Z}_{+}}
+      } of neighbourhoods of \mt{x} such that any neighbourhood \mt{U} of \mt{x} contains at least on of the sets \mt{
+            U_{n}
+      }. A space \mtb{X} that has a countable basis at each of its point is said to satisfy the \defineNewWord{
+            first countability axiom
+      }\label{def:FirstCountabilityAxiom}
+\end{definition}
+
+\begin{theorem}
+      Let \mt{
+            f: \mathbf{X} \rightarrow \mathbf{Y}
+      } be metrizable with metric \mt{
+            d_{\mathbf{X}}
+      } and \mt{
+            d_{\mathbf{Y}}
+      }, respectively. Then continuity of \mt{f} is equivalent to the requirement that given \mt{
+            x \in \mathbb{X}
+      } and given \mt{
+            \epsilon > 0
+      }, there exists \mt{
+            \delta > 0
+      } such that
+      \begin{equation*}
+            d_{\mathbf{X}}(x,y) < \delta \implies d_{\mathbb{Y}}(f(x),f(y)) < \epsilon
+      \end{equation*}
+\end{theorem}
+
+\begin{proof}
+      Suppose \mt{f} is continuous. Given \mt{x} and \mt{
+            \epsilon
+      }, consider the set
+      \begin{equation*}
+            f^{-1}(B(f(x),\epsilon))
+      \end{equation*}
+      which is open in \mtb{X} and contains the point\mt{x}. It contains some \mt{
+            \delta
+      }-ball \mt{B(x,\delta)} centered at \mt{x}. If \mt{y} is in this \mt{
+            \delta
+      }-ball, then \mt{f(y)} is in this \mt{
+            \delta
+      }-ball as desired.
+
+      Conversely, suppose that the \mt{
+            \epsilon-\delta
+      } condition is satisfied. Let \mt{V} be open in \mtb{Y}; we show that \mt{
+            f^{-1}(V)
+      } is open in \mtb{X}. Let \mt{x} be a point of the set \mt{
+            f^{-1}(V)
+      }. Since \mt{
+            f(x) \in V
+      } there is an \mt{
+            \epsilon
+      }-ball \mt{
+            B(f(x),\epsilon)
+      } centered at \mt{
+            f(x)
+      } and contained in \mt{V}. By the \mt{
+            \epsilon-\delta
+      } condition, there exists a \mt{
+            \delta
+      }-ball centered at \mt{x} such that \mt{
+            f(B(x,\delta)) \subseteq B(f(x),\epsilon)
+      }. Then \mt{
+            B(x,\delta)
+      } is a neighbourhood of \mt{x} contained in \mt{
+            f^{-1}(V)
+      }, so that \mt{
+            f^{-1}(V)
+      } is open, as desired.
+\end{proof}
+
+\begin{lemma}[The sequence lemma]\label{def:TheSequenceLemma}\omitObviuos
+      Let \mtb{X} be a topological space; let \mt{
+            A \subseteq \mathbb{X}
+      } If there is a sequence of points of \mt{A} converging to \mt{x}, then \mt{
+            x \in \closure{A}
+      }, the converse holds if \mtb{X} is metrizable.
+\end{lemma}
+
+\begin{theorem}\omitObviuos
+      Let \mt{
+            f: \mathbb{X} \rightarrow \mathbb{Y}
+      }. If the function \mt{f} is continuous, then for every convergent sequence \mt{
+            x_{n} \rightarrow x
+      }, the sequence \mt{
+            f(x_{n})
+      } converges to \mt{
+            f(x)
+      }. The converse holds if \mtb{X} is metrizable.
+\end{theorem}
+
+\begin{lemma}\omitObviuos
+      The addition, subtraction, and multiplication operations are continuous functions from \mt{
+            \mathbb{R} \times \mathbb{R}
+      } into \mtb{R}; and the quotient operation is continuous function from \mt{
+            \mathbb{R} \times (\mathbb{R} - \{0\})
+      } into \mtb{R}.
+\end{lemma}
+
+\begin{theorem}\omitObviuos
+      If \mtb{X} is a topological space, and if \mt{
+            f,g: \mathbb{X} \rightarrow \mathbb{R}
+      } are continuous functions, then \mt{
+            f + g
+      }, \mt{
+            f - g
+      } and \mt{
+            f \cdot g
+      } are continuous. If \mt{
+            g(x) \neq 0
+      } for all \mt{x}, then \mt{
+            \frac{f}{g}
+      } is continuous.
+\end{theorem}
+
+\begin{definition}[converge uniformly]\label{def:ConvergeUniformly}
+      Let \mt{
+            f_{n}: \mathbb{X} \rightarrow \mathbb{Y}
+      } be a sequence of functions from the set \mtb{X} to the metric space \mtb{Y}. Let \mt{d} be the metric for \mtb{Y}. We say that the sequence \mt{
+            (f_{n})
+      } \defineNewWord{
+            converges uniformly
+      } to the function \mt{
+            f : \mathbb{X} \rightarrow \mathbb{Y}
+      } if given \mt{
+            \epsilon > 0
+      }, there exists an integer \mt{N} such that 
+      \begin{equation*}
+            d(f_{n}(x),f(x)) < \epsilon
+      \end{equation*}
+      for all \mt{
+            n > N
+      } and all \mt{
+            x \in \mathbb{X}
+      }
+\end{definition}
+
+\begin{theorem}[Uniform limit theorem]\label{def:UniformLimitTheorem}
+      Let \mt{
+            f_{n} : \mathbb{X} \rightarrow \mathbb{Y}
+      } be a sequence of continuous functions from the topological space \mtb{X} to the metric space \mtb{Y}. If \mt{
+            (f_{n})
+      } converges uniformly to \mt{f}, then \mt{f} is continuous.
+\end{theorem}
+
+\begin{definition}[isometric imbedding]\label{def:IsometricImbedding}
+      Let \mtb{X} and \mtb{Y} be metric spaces with metric \mt{
+            d_{\mathbb{X}}
+      } and \mt{
+            d_{\mathbb{Y}}
+      }, respectively. Let \mt{
+            f: \mathbb{X} \rightarrow \mathbb{Y}
+      } have the property that for every pair of points \mt{
+            x_{1}
+      }, \mt{
+            x_{2}
+      } of \mtb{X}, and 
+      \begin{equation*}
+            d_{\mathbb{Y}}(f(x_{1}),f(x_{2})) = d_{\mathbb{X}}(x_{1},x_{2})
+      \end{equation*}
+
+      \mt{f} is an topological imbedding and is called an \defineNewWord{isometric imbedding} of \mtb{X} in \mtb{Y}
+\end{definition}
