@@ -87,6 +87,36 @@ func main() {
 				},
 			},
 			{
+				"isometric imbedding",
+				"IsometricImbedding",
+				nil,
+			},
+			{
+				"converge uniformly",
+				"ConvergeUniformly",
+				nil,
+			},
+			{
+				"first countability axiom",
+				"FirstCountabilityAxiom",
+				nil,
+			},
+			{
+				"countable basis at point \\mt{x}",
+				"CountableBasisAtPointX",
+				nil,
+			},
+			{
+				"$l^{2}$-topology",
+				"L2Topology",
+				nil,
+			},
+			{
+				"Hilbert Cube",
+				"HilbertCube",
+				nil,
+			},
+			{
 				"uniform topology",
 				"UniformMetric",
 				nil,
